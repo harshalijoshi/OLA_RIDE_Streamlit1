@@ -17,10 +17,12 @@ if uploaded_file is not None:
 import mysql.connector
 # Connect to MySQL
 conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="password@123",
-    database="ola_booking"
+    host=st.secrets["db_host"],
+    port=st.secrets["db_port"],
+    user=st.secrets["db_user"],
+    password=st.secrets["db_password"],
+    database=st.secrets["db_name"]
+
 )
 
 cursor = conn.cursor()
